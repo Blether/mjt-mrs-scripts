@@ -1,0 +1,7 @@
+" prepare to acquire next contiguous slice"
+" Matthew Taylor 2008-02-06"
+nextslice
+sliceorder
+dpss
+imprep
+set_sw

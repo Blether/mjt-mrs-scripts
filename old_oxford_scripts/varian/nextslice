@@ -1,0 +1,9 @@
+" shift the slice array along by one thickness"
+" Matthew Taylor 2008-02-06"
+
+$slices = size('pss')
+$first = (pss[1]+(thk/10))
+sort('pss'):$unused,$result
+pss = $result
+$step = (pss[2]-pss[1])
+array('pss',$slices,$first,$step,'nodg')

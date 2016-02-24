@@ -1,0 +1,10 @@
+#!/bin/bash
+# this takes a file of amares txt output
+# uses amarestxt2csv process to get output and then outputs a batch
+# file suitable for use in amares on another file
+# mjt 2006-11-30
+INFILE=$1
+OUTFILE='phases.dlm'
+
+cat $INFILE |sed -n -r '/^Freq/,$p'  |tr '\n' ',' |sed s/,[a-zA-Z]/'\n'/g |sed s/.*\),// | sed s/,//g | tr '\t' ',' | sed s/^oise\ :\ //g | sed s/,$//g |sed -n 7p |tr ',' '\n' |awk '{printf "%3.1f\n", $1}' > $OUTFILE
+
